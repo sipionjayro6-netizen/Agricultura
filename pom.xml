@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pe.agroconecta</groupId>
+  <artifactId>agroconecta</artifactId>
+  <version>0.3.0</version>
+  <name>AgroConecta - Sistema de Gestion de Pedidos e Inventario</name>
+  <description>Avance de Proyecto Final 3: arquitectura MVC + DAO, SOLID, TDD y seguridad en Java.</description>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <guava.version>33.3.1-jre</guava.version>
+    <commons-lang3.version>3.17.0</commons-lang3.version>
+    <commons-io.version>2.17.0</commons-io.version>
+    <logback.version>1.5.8</logback.version>
+    <poi.version>5.3.0</poi.version>
+    <h2.version>2.3.232</h2.version>
+    <gson.version>2.11.0</gson.version>
+    <junit.version>5.11.2</junit.version>
+  </properties>
+
+  <dependencies>
+    <!-- Librerias de apoyo a la codificacion (clase 10) -->
+    <dependency><groupId>com.google.guava</groupId><artifactId>guava</artifactId><version>${guava.version}</version></dependency>
+    <dependency><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>${commons-lang3.version}</version></dependency>
+    <dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>${commons-io.version}</version></dependency>
+    <dependency><groupId>ch.qos.logback</groupId><artifactId>logback-classic</artifactId><version>${logback.version}</version></dependency>
+    <dependency><groupId>org.apache.poi</groupId><artifactId>poi-ooxml</artifactId><version>${poi.version}</version></dependency>
+
+    <!-- Persistencia y JSON -->
+    <dependency><groupId>com.h2database</groupId><artifactId>h2</artifactId><version>${h2.version}</version></dependency>
+    <dependency><groupId>com.google.code.gson</groupId><artifactId>gson</artifactId><version>${gson.version}</version></dependency>
+
+    <!-- Pruebas (TDD) -->
+    <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>${junit.version}</version><scope>test</scope></dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.5.0</version>
+        <configuration><mainClass>pe.agroconecta.App</mainClass></configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.10.0</version>
+        <configuration><encoding>UTF-8</encoding><docencoding>UTF-8</docencoding><charset>UTF-8</charset><doclint>none</doclint></configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
